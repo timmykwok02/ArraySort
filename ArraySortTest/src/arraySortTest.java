@@ -1,11 +1,25 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class arraySortTest {
 
 	public static void main(String[] args) {
 		// Sort integer array
+<<<<<<< Updated upstream
 		int[] intArray = {4, 2, 3, 5, 1};
 		
+=======
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the size of the array: ");
+		int size = sc.nextInt();
+		
+		int[] intArray = new int[size];
+		for (int x = 0; x<size; x++) {
+			System.out.print("Enter an integer: ");
+			intArray[x] = sc.nextInt();
+		}
+		
+>>>>>>> Stashed changes
 		System.out.println("Orginal Array");
 		System.out.println(Arrays.toString(intArray));
 
