@@ -14,6 +14,7 @@ public class arraySortTest {
 		System.out.println(Arrays.toString(intArray));
 	}
 	
+	// insertion sort
 	public static int[] sortInt(int[] array) {
 		int num, index;
 		for (int x=1; x<array.length; x++) {
