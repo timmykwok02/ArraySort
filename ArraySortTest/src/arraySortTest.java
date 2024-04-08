@@ -1,32 +1,44 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class arraySortTest {
 
 	public static void main(String[] args) {
-		// testing GitHub
-		int[] intArray = {4, 2, 3, 5, 1};
-		String[] stringArray = {"Hello", "Apple", "Cat"};
+		// Sort String array
+		Scanner sc = new Scanner(System.in);
+//		String[] stringArray = {"Hello", "Apple", "Cat"};
 		
-		System.out.println("Orginal Arrays");
-		System.out.println(Arrays.toString(intArray));
+//		Taking user input		
+		System.out.print("Enter the size of the array: ");
+		int size = sc.nextInt();
+
+		String[] stringArray = new String[size];
+		for (int x = 0; x<size; x++) {
+			System.out.print("Enter a string: ");
+			stringArray[x] = sc.next();
+		}		
+		
+//		print out original and sorted array
+		System.out.println("Orginal Array");
 		System.out.println(Arrays.toString(stringArray));
 		
 		System.out.println("Sorted Arrays");
-		intArray = sortInt(intArray);
-		System.out.println(Arrays.toString(intArray));
 		stringArray = sortString(stringArray);
 		System.out.println(Arrays.toString(stringArray));
 	}
-	
-	public static int[] sortInt(int[] array) {
-		int num, index;
+
+//	insertion sort
+	public static String[] sortString(String[] array) {
+		String string;
+		int index;
+
 		for (int x=1; x<array.length; x++) {
-			num = array[x];
+			string = array[x];
 			index = x-1;
 			
-			while (num<array[index]) {
+			while (string.compareTo(array[index]) < 0) {
 				array[index+1] = array[index];
-				array[index] = num;
+				array[index] = string;
 				index--;
 				if (index < 0)
 					break;
