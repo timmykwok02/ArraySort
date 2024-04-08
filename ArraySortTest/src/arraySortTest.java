@@ -3,27 +3,27 @@ import java.util.Arrays;
 public class arraySortTest {
 
 	public static void main(String[] args) {
-		// Sort integer array
-		int[] intArray = {4, 2, 3, 5, 1};
+		// Sort String array
+		String[] stringArray = {"Hello", "Apple", "Cat"};
 		
 		System.out.println("Orginal Array");
-		System.out.println(Arrays.toString(intArray));
-
-		System.out.println("Sorted Array");
-		intArray = sortInt(intArray);
-		System.out.println(Arrays.toString(intArray));
+		System.out.println(Arrays.toString(stringArray));
+		
+		System.out.println("Sorted Arrays");
+		stringArray = sortString(stringArray);
+		System.out.println(Arrays.toString(stringArray));
 	}
 	
-	// insertion sort
-	public static int[] sortInt(int[] array) {
-		int num, index;
+	public static String[] sortString(String[] array) {
+		String string;
+		int index;
 		for (int x=1; x<array.length; x++) {
-			num = array[x];
+			string = array[x];
 			index = x-1;
 			
-			while (num<array[index]) {
+			while (string.compareTo(array[index]) < 0) {
 				array[index+1] = array[index];
-				array[index] = num;
+				array[index] = string;
 				index--;
 				if (index < 0)
 					break;
