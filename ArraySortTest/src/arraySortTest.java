@@ -6,6 +6,7 @@ public class arraySortTest {
 	public static void main(String[] args) {
 // 		Sort integer array
 //		int[] intArray = {4, 2, 3, 5, 1};
+//		testing github
 		
 		Scanner sc = new Scanner(System.in);
 //		Taking user input
