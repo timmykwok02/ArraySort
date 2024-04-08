@@ -4,12 +4,11 @@ import java.util.Scanner;
 public class arraySortTest {
 
 	public static void main(String[] args) {
-		// Sort integer array
-<<<<<<< Updated upstream
-		int[] intArray = {4, 2, 3, 5, 1};
+// 		Sort integer array
+//		int[] intArray = {4, 2, 3, 5, 1};
 		
-=======
 		Scanner sc = new Scanner(System.in);
+//		Taking user input
 		System.out.print("Enter the size of the array: ");
 		int size = sc.nextInt();
 		
@@ -19,7 +18,7 @@ public class arraySortTest {
 			intArray[x] = sc.nextInt();
 		}
 		
->>>>>>> Stashed changes
+//		Printing out original and sorted array
 		System.out.println("Orginal Array");
 		System.out.println(Arrays.toString(intArray));
 
@@ -28,7 +27,7 @@ public class arraySortTest {
 		System.out.println(Arrays.toString(intArray));
 	}
 	
-	// insertion sort
+//	insertion sort
 	public static int[] sortInt(int[] array) {
 		int num, index;
 		for (int x=1; x<array.length; x++) {
