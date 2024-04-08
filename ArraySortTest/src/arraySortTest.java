@@ -46,23 +46,5 @@ public class arraySortTest {
 		}
 		return array;
 	}
-	
-	public static String[] sortString(String[] array) {
-		String string;
-		int index;
-		for (int x=1; x<array.length; x++) {
-			string = array[x];
-			index = x-1;
-			
-			while (string.compareTo(array[index]) < 0) {
-				array[index+1] = array[index];
-				array[index] = string;
-				index--;
-				if (index < 0)
-					break;
-			}
-		}
-		return array;
-	}
 
 }
