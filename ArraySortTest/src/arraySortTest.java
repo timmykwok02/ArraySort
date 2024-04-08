@@ -9,28 +9,48 @@ public class arraySortTest {
 		
 		Scanner sc = new Scanner(System.in);
 //		Taking user input
+		System.out.println("Enter if the array is filled with strings or integers");
+		
+		System.out.print("Enter 'String' or 'Integer': ");
+		String arrayType = sc.next();
+		while (arrayType.compareTo("String") != 0 && arrayType.compareTo("Integer") != 0) {
+			System.out.println("Invalid input");
+			System.out.print("Enter 'String' or 'Integer': ");
+			arrayType = sc.next();
+		}	
+			
 		System.out.print("Enter the size of the array: ");
 		int size = sc.nextInt();
-		
 		int[] intArray = new int[size];
-		for (int x = 0; x<size; x++) {
-			System.out.print("Enter an integer: ");
-			intArray[x] = sc.nextInt();
+		
+		if (arrayType.compareTo("String") == 0) {
+			String[] stringArray = new String[size];
+			for (int x = 0; x<size; x++) {
+				System.out.print("Enter a string: ");
+				stringArray[x] = sc.next();
+			}
+			System.out.println("Orginal Array");
+			System.out.println(Arrays.toString(stringArray));
+			System.out.println("Sorted Arrays");
+			stringArray = sortString(stringArray);
+			System.out.println(Arrays.toString(stringArray));
 		}
 		
-//		Printing out original and sorted array
-		System.out.println("Orginal Array");
-		System.out.println(Arrays.toString(intArray));
-		System.out.println(Arrays.toString(stringArray));
-		
-		System.out.println("Sorted Arrays");
-		intArray = sortInt(intArray);
-		System.out.println(Arrays.toString(intArray));
-		stringArray = sortString(stringArray);
-		System.out.println(Arrays.toString(stringArray));
+		else if (arrayType.compareTo("Integer") == 0) {
+			for (int x = 0; x<size; x++) {
+			System.out.print("Enter an integer: ");
+			intArray[x] = sc.nextInt();
+			}
+			System.out.println("Orginal Array");
+			System.out.println(Arrays.toString(intArray));
+			System.out.println("Sorted Arrays");
+			intArray = sortInt(intArray);
+			System.out.println(Arrays.toString(intArray));
+		}
+
 	}
 	
-//	insertion sort
+//	Insertion sort for Integer
 	public static int[] sortInt(int[] array) {
 		int num, index;
 		for (int x=1; x<array.length; x++) {
@@ -48,6 +68,7 @@ public class arraySortTest {
 		return array;
 	}
 	
+//	Insertion sort for String
 	public static String[] sortString(String[] array) {
 		String string;
 		int index;
