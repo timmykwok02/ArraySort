@@ -21,10 +21,13 @@ public class arraySortTest {
 //		Printing out original and sorted array
 		System.out.println("Orginal Array");
 		System.out.println(Arrays.toString(intArray));
-
-		System.out.println("Sorted Array");
+		System.out.println(Arrays.toString(stringArray));
+		
+		System.out.println("Sorted Arrays");
 		intArray = sortInt(intArray);
 		System.out.println(Arrays.toString(intArray));
+		stringArray = sortString(stringArray);
+		System.out.println(Arrays.toString(stringArray));
 	}
 	
 //	insertion sort
@@ -37,6 +40,24 @@ public class arraySortTest {
 			while (num<array[index]) {
 				array[index+1] = array[index];
 				array[index] = num;
+				index--;
+				if (index < 0)
+					break;
+			}
+		}
+		return array;
+	}
+	
+	public static String[] sortString(String[] array) {
+		String string;
+		int index;
+		for (int x=1; x<array.length; x++) {
+			string = array[x];
+			index = x-1;
+			
+			while (string.compareTo(array[index]) < 0) {
+				array[index+1] = array[index];
+				array[index] = string;
 				index--;
 				if (index < 0)
 					break;
